@@ -1,0 +1,25 @@
+{
+  "name": "kobeni",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "repository": "git@github.com:3XP-Edu/Kobeni.git",
+  "author": "Gabriel Queiroz <gabriel.queiroz@mblabs.com.br>",
+  "license": "MIT",
+  "scripts": {
+    "proto:gen": "./proto-gen.sh",
+    "start": "ts-node src/index",
+    "dev": "nodemon src/index.ts"
+  },
+  "devDependencies": {
+    "@grpc/grpc-js": "^1.6.7",
+    "@grpc/proto-loader": "^0.6.12",
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.16",
+    "prisma": "^3.14.0",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "@prisma/client": "3.14.0"
+  }
+}

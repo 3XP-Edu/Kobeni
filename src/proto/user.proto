@@ -1,0 +1,55 @@
+syntax = "proto3";
+package userPackage;
+
+message User {
+    string id = 1;
+    string email = 2;
+    string username = 3;
+    string password = 4;
+    string taxId = 5;
+    string createdBy = 6;
+    string createdAt = 7;
+    string updatedBy = 8;
+    string updatedAt = 9;
+    string deletedBy = 10;
+    string deletedAt = 11;
+}
+
+message RegisterUserRequest {
+    User user = 1;
+}
+
+message GetUserByIdRequest {
+    string id = 1; 
+}
+
+message GetAllUsersResponse {
+    repeated User users = 1 ;
+}
+
+message DeleteUserRequest {
+    string id = 1; 
+}
+
+message UpdateUserRequest {
+    string id = 1; 
+    User user = 2;
+}
+
+message UserResponse {
+    User user = 1;
+}
+
+message DeleteUserResponse {
+    User user = 1;
+}
+
+message Empty {}
+
+service UserService {
+    rpc registerUser(RegisterUserRequest) returns (UserResponse);
+    rpc getUserById(GetUserByIdRequest) returns (UserResponse);
+    rpc getAllUsers(Empty) returns (GetAllUsersResponse);
+    rpc deleteUser (DeleteUserRequest) returns (DeleteUserResponse);
+    rpc updateUserById (UpdateUserRequest) returns (UserResponse);
+}
